@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
+import { MoviesModule } from './movies/movies.module';
 
 @NgModule({
   declarations: [ AppComponent ],
@@ -12,7 +13,8 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     FormsModule,
     HttpModule,
-    SharedModule
+    SharedModule,
+    MoviesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
