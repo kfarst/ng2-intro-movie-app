@@ -5,3 +5,32 @@
 body {
   font-family: 'Open Sans', sans-serif;
 }
+
+.no-padding-left {
+  padding-left: 0 !important;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+.add-space-below {
+  margin-bottom: 30px;
+}
+
+.add-smaller-space-below {
+  margin-bottom: 10px;
+}
+
+.push-slightly-down {
+  margin-top: 10px;
+}
+
+.push-down {
+  margin-top: 10px;
+}
+

@@ -5,7 +5,7 @@ import { Movie, MoviesService } from './movies.service';
 @Component({
   selector: 'movies',
   templateUrl: './movies.component.html',
-  styleUrls: ['./movies.component.css']
+  styleUrls: ['../shared/styles.css', './movies.component.css']
 })
 export class MoviesComponent implements OnInit, OnDestroy {
   movies: Movie[] = [];
@@ -24,6 +24,10 @@ export class MoviesComponent implements OnInit, OnDestroy {
       movies => this.movies = movies,
         error =>  this.errorMessage = <any>error
     );
+  }
+
+  getImageUrl (fileName: string): string {
+    return `https://image.tmdb.org/t/p/w1280${fileName}`;
   }
 
   ngOnDestroy() {

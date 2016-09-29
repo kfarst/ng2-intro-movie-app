@@ -1,3 +1,24 @@
-<p *ngFor="let movie of movies">
-  {{ movie.title }}
-</p>
+<div class="row movie--detail" *ngFor="let movie of movies">
+  <div class="col-md-8">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>{{ movie.title }}</h1>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="row add-smaller-space-below">
+      <div class="col-md-12"><i class="fa fa-lrg fa-calendar"></i> {{ movie.release_date }}</div>
+    </div>
+    <div class="row add-smaller-space-below">
+      <div class="col-md-12"><i class="fa fa-lrg" [ngClass]="{ 'fa-thumbs-up green': movie.vote_average >= 5, 'fa-thumbs-down red': movie.vote_average < 5 }"></i> {{ movie.vote_average }}</div>
+    </div>
+
+    <p>{{ movie.overview }}</p>
+  </div>
+
+  <div class="col-md-4 no-padding-left">
+    <img width="100%" [src]="getImageUrl(movie.poster_path)" />
+  </div>
+</div>
