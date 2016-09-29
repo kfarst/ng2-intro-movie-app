@@ -8,6 +8,7 @@ import { Movie } from '../index';
 })
 export class MovieDetailsComponent {
   @Input() movie: Movie;
+  @Input() isEven: any;
 
   getImageUrl (fileName: string): string {
     return `https://image.tmdb.org/t/p/w1280${fileName}`;

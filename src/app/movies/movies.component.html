@@ -1,1 +1,5 @@
-<movie-details [movie]="movie" *ngFor="let movie of movies"></movie-details>
+<movie-details
+  [movie]="movie"
+  [isEven]="isEven"
+  *ngFor="let movie of movies; let isEven = even">
+</movie-details>
