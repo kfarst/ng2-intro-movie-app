@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MoviesComponent } from './index';
+import { MoviesService, MoviesComponent } from './index';
 
 @NgModule({
   imports: [
     CommonModule
   ],
+  providers: [MoviesService],
   declarations: [MoviesComponent],
   exports: [MoviesComponent]
 })

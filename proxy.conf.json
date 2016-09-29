@@ -1,0 +1,6 @@
+{
+  "/3": {
+    "changeOrigin": true,
+    "target": "http://api.themoviedb.org"
+  }
+}
