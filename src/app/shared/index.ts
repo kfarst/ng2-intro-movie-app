@@ -1,1 +1,2 @@
-export * from './toolbar/toolbar.component';
+export * from './toolbar/index';
+export * from './navbar/index';

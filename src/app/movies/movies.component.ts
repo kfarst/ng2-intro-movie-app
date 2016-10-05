@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { Movie, MoviesService } from './movies.service';
 
@@ -10,16 +11,23 @@ import { Movie, MoviesService } from './movies.service';
 export class MoviesComponent implements OnInit, OnDestroy {
   movies: Movie[] = [];
   movieSub: Subscription;
+  paramSub: Subscription;
+  listType: string;
   errorMessage: string;
 
-  constructor(private moviesService: MoviesService) { }
+  constructor(private moviesService: MoviesService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.getMovies();
+    this.paramSub = this.route
+      .params
+      .subscribe(params => {
+        this.listType = params['list_type'];
+        this.getMovies();
+      });
   }
 
   getMovies() {
-    this.movieSub = this.moviesService.get('upcoming')
+    this.movieSub = this.moviesService.get(this.listType.replace('-', '_'))
     .subscribe(
       movies => this.movies = movies,
         error =>  this.errorMessage = <any>error
@@ -27,6 +35,7 @@ export class MoviesComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
+    this.paramSub.unsubscribe();
     this.movieSub.unsubscribe();
   }
 }

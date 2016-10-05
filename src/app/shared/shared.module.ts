@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ToolbarComponent } from './index';
+import { ToolbarComponent, NavbarComponent } from './index';
 
 @NgModule({
   imports: [CommonModule],
-  declarations: [ToolbarComponent],
-  exports: [ToolbarComponent]
+  declarations: [ToolbarComponent, NavbarComponent],
+  exports: [ToolbarComponent, NavbarComponent]
 })
 export class SharedModule { }

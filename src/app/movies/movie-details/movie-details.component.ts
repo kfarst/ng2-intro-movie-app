@@ -4,7 +4,8 @@ import { Movie } from '../index';
 @Component({
   selector: 'movie-details',
   templateUrl: './movie-details.component.html',
-  styleUrls: ['../../shared/styles.css', './movie-details.component.css']
+  styleUrls: ['./movie-details.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MovieDetailsComponent {
   @Input() movie: Movie;
