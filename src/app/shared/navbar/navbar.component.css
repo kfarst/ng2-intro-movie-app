@@ -15,6 +15,6 @@ nav a {
   text-decoration: none;
 }
 
-/* nav a.router-link-active { */
-/*   color: #9E9E9E; */
-/* } */
+nav a.router-link-active {
+  color: #9E9E9E;
+}
