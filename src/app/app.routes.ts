@@ -1,5 +1,10 @@
 import { Routes } from '@angular/router';
-import { MoviesComponent, MoviesActivateGuard, MoviesDeactivateGuard } from './movies/index';
+import {
+  MoviesComponent,
+  MoviesActivateGuard,
+  MoviesDeactivateGuard,
+  MoviesResolver
+} from './movies/index';
 
 export const routes: Routes = [
   {
@@ -9,6 +14,10 @@ export const routes: Routes = [
       component: MoviesComponent,
       canActivate: [MoviesActivateGuard],
       canDeactivate: [MoviesDeactivateGuard],
+      resolve: {
+        preload: 'preload',
+        movies: MoviesResolver
+      }
     }]
   },
   { path: '**', redirectTo: '/movies/now-playing', pathMatch: 'full' }

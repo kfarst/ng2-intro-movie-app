@@ -11,31 +11,20 @@ import { Movie, MoviesService } from './movies.service';
 export class MoviesComponent implements OnInit, OnDestroy {
   movies: Movie[] = [];
   movieSub: Subscription;
-  paramSub: Subscription;
   listType: string;
   errorMessage: string;
 
   constructor(private moviesService: MoviesService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.paramSub = this.route
-      .params
-      .subscribe(params => {
-        this.listType = params['list_type'];
-        this.getMovies();
-      });
+    this.movieSub = this.route.data.subscribe(data => {
+      console.log('loaded');
+      this.movies = data['movies'];
+    });
   }
 
-  getMovies() {
-    this.movieSub = this.moviesService.get(this.listType.replace('-', '_'))
-    .subscribe(
-      movies => this.movies = movies,
-        error =>  this.errorMessage = <any>error
-    );
-  }
 
   ngOnDestroy() {
-    this.paramSub.unsubscribe();
     this.movieSub.unsubscribe();
   }
 }

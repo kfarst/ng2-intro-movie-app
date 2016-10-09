@@ -19,7 +19,7 @@ import { MoviesModule } from './movies/movies.module';
     SharedModule,
     MoviesModule
   ],
-  providers: [],
+  providers: [{ provide: 'preload', useValue: () => console.log('preloading') }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
