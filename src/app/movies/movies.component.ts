@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
+import { Genre } from './index';
 import { Movie, MoviesService } from './movies.service';
 
 @Component({
@@ -10,6 +11,7 @@ import { Movie, MoviesService } from './movies.service';
 })
 export class MoviesComponent implements OnInit, OnDestroy {
   movies: Movie[] = [];
+  genres: Genre[] = [];
   movieSub: Subscription;
   listType: string;
   errorMessage: string;
@@ -19,6 +21,7 @@ export class MoviesComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.movieSub = this.route.data.subscribe(data => {
       console.log('loaded');
+      this.genres = data['genres'];
       this.movies = data['movies'];
     });
   }

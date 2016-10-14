@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Movie } from '../index';
+import { Movie, Genre } from '../index';
 
 @Component({
   selector: 'movie-details',
@@ -9,6 +9,7 @@ import { Movie } from '../index';
 })
 export class MovieDetailsComponent {
   @Input() movie: Movie;
+  @Input() genres: Genre[];
   @Input() isEven: any;
 
   getImageUrl (fileName: string): string {

@@ -5,7 +5,10 @@ import {
   MoviesActivateGuard,
   MoviesDeactivateGuard,
   MoviesComponent,
-  MoviesResolver
+  MoviesResolver,
+  GenresResolver,
+  GenreService,
+  GenreListPipe
 } from './index';
 import { MovieDetailsComponent } from './movie-details/index';
 
@@ -17,9 +20,11 @@ import { MovieDetailsComponent } from './movie-details/index';
     MoviesService,
     MoviesActivateGuard,
     MoviesDeactivateGuard,
-    MoviesResolver
+    MoviesResolver,
+    GenresResolver,
+    GenreService
   ],
-  declarations: [MoviesComponent, MovieDetailsComponent],
+  declarations: [MoviesComponent, MovieDetailsComponent, GenreListPipe],
   exports: [MoviesComponent]
 })
 export class MoviesModule { }

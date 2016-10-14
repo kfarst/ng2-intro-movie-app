@@ -5,31 +5,19 @@ import { API_KEY } from '../shared/index';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-export interface Movie {
+export interface Genre {
   id: number;
-  title: string;
-  release_date: string;
-  overview: string;
-  backdrop_path: string;
-  poster_path: string;
-  imdb_id: string;
-  vote_average: number;
-  status: string;
-  tagline: string;
-  budget: number;
-  revenue: number;
-  runtime: number;
-  genres: any[];
-  production_companies: any[];
+  name: string;
 }
 
 @Injectable()
-export class MoviesService {
-  constructor(private http: Http) {}
+export class GenreService {
 
-  get(endpoint: string): Observable<Movie[]> {
-    return this.http.get(`/3/movie/${endpoint}?api_key=${API_KEY}`)
-                    .map((res: Response) => res.json().results)
+  constructor(private http: Http) { }
+
+  get(): Observable<Genre[]> {
+    return this.http.get(`/3/genre/movie/list?api_key=${API_KEY}`)
+                    .map((res: Response) => res.json().genres)
                     .catch(this.handleError);
   }
 
@@ -40,5 +28,3 @@ export class MoviesService {
     return Observable.throw(errMsg);
   }
 }
-
-

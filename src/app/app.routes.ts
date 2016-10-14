@@ -3,7 +3,8 @@ import {
   MoviesComponent,
   MoviesActivateGuard,
   MoviesDeactivateGuard,
-  MoviesResolver
+  MoviesResolver,
+  GenresResolver
 } from './movies/index';
 
 export const routes: Routes = [
@@ -16,7 +17,8 @@ export const routes: Routes = [
       canDeactivate: [MoviesDeactivateGuard],
       resolve: {
         preload: 'preload',
-        movies: MoviesResolver
+        movies: MoviesResolver,
+        genres: GenresResolver
       }
     }]
   },

@@ -14,6 +14,9 @@
     <div class="row add-smaller-space-below">
       <div class="col-md-12"><i class="fa fa-lrg" [ngClass]="{ 'fa-thumbs-up green': movie.vote_average >= 5, 'fa-thumbs-down red': movie.vote_average < 5 }"></i> {{ movie.vote_average }}</div>
     </div>
+    <div class="row add-space-below">
+      <div class="col-md-12">{{ movie.genre_ids | genreList: genres }}</div>
+    </div>
 
     <p>{{ movie.overview }}</p>
   </div>
