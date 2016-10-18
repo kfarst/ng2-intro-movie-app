@@ -8,9 +8,14 @@ import { Movie, Genre } from '../index';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MovieDetailsComponent {
-  @Input() movie: Movie;
+  @Input('movie') movieData: Movie;
   @Input() genres: Genre[];
   @Input() isEven: any;
+
+  get movie() {
+    console.log(`GET movie: ${this.movieData.title}`);
+    return this.movieData;
+  }
 
   getImageUrl (fileName: string): string {
     return `https://image.tmdb.org/t/p/w1280${fileName}`;

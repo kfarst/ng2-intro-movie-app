@@ -4,3 +4,7 @@
   font-size: 22px;
   line-height: 28px;
 }
+
+.movie--detail.selected {
+  background-color: #FFFFE5;
+}

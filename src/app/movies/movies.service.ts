@@ -21,6 +21,7 @@ export interface Movie {
   runtime: number;
   genres: any[];
   production_companies: any[];
+  markedToSee: boolean;
 }
 
 @Injectable()

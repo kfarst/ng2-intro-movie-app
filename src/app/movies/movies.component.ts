@@ -26,6 +26,14 @@ export class MoviesComponent implements OnInit, OnDestroy {
     });
   }
 
+  pickMovie(event: any) {
+    event.preventDefault();
+    let movie: Movie = this.movies.find(movie => movie.markedToSee);
+    if (movie) {
+      movie.markedToSee = false;
+    }
+    this.movies[Math.floor(Math.random() * this.movies.length)].markedToSee = true;
+  }
 
   ngOnDestroy() {
     this.movieSub.unsubscribe();
