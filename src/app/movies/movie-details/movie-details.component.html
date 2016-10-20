@@ -1,4 +1,4 @@
-<div class="row movie--detail" [ngClass]="{ 'selected': !!movie.markedToSee }">
+<div class="row movie--detail" [ngClass]="{ 'selected': !!markedToSee }">
   <div class="col-md-8" [ngClass]="{ 'pull-left': isEven, 'pull-right': !isEven }">
     <div class="row">
       <div class="col-md-12">
@@ -13,7 +13,7 @@
     </div>
     <div class="row add-smaller-space-below">
       <div class="col-md-2"><i class="fa fa-lrg" [ngClass]="{ 'fa-thumbs-up green': movie.vote_average >= 5, 'fa-thumbs-down red': movie.vote_average < 5 }"></i> {{ movie.vote_average }}</div>
-      <div class="col-md-4 green" *ngIf="movie.markedToSee"><i class="fa fa-check"></i> See this movie!</div>
+      <div class="col-md-4 green" *ngIf="markedToSee"><i class="fa fa-check"></i> See this movie!</div>
     </div>
     <div class="row add-space-below">
       <div class="col-md-12">{{ movie.genre_ids | genreList: genres }}</div>

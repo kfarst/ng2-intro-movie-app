@@ -7,6 +7,7 @@
 <movie-details
   [movie]="movie"
   [isEven]="isEven"
+  [markedToSee]="index === selectedMovieIndex"
   [genres]="genres"
-  *ngFor="let movie of movies; let isEven = even">
+  *ngFor="let movie of movies; let isEven = even; let index = index">
 </movie-details>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { Movie, Genre } from '../index';
 
 @Component({
@@ -11,6 +11,7 @@ export class MovieDetailsComponent {
   @Input('movie') movieData: Movie;
   @Input() genres: Genre[];
   @Input() isEven: any;
+  @Input() markedToSee: boolean;
 
   get movie() {
     console.log(`GET movie: ${this.movieData.title}`);
