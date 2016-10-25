@@ -1,7 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { API_KEY } from '../shared/index';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
@@ -26,10 +25,14 @@ export interface Movie {
 
 @Injectable()
 export class MoviesService {
-  constructor(private http: Http) {}
+  apiKey: string;
+
+  constructor(private http: Http, @Inject('apiKey') apiKey) {
+    this.apiKey = apiKey;
+  }
 
   get(endpoint: string): Observable<Movie[]> {
-    return this.http.get(`/3/movie/${endpoint}?api_key=${API_KEY}`)
+    return this.http.get(`/3/movie/${endpoint}?api_key=${this.apiKey}`)
                     .map((res: Response) => res.json().results)
                     .catch(this.handleError);
   }

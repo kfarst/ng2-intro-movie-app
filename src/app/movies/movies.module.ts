@@ -17,7 +17,7 @@ import { MovieDetailsComponent } from './movie-details/index';
     CommonModule
   ],
   providers: [
-    MoviesService,
+    { provide: MoviesService, useClass: MoviesService },
     MoviesActivateGuard,
     MoviesDeactivateGuard,
     MoviesResolver,

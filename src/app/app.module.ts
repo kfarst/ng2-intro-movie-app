@@ -19,7 +19,13 @@ import { MoviesModule } from './movies/movies.module';
     SharedModule,
     MoviesModule
   ],
-  providers: [{ provide: 'preload', useValue: () => console.log('preloading') }],
+  providers: [{
+    provide: 'preload',
+    useValue: () => console.log('preloading')
+  }, {
+    provide: 'apiKey',
+    useValue: 'your key here'
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

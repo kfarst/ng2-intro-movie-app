@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Injector } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { Genre } from './index';
@@ -16,8 +16,11 @@ export class MoviesComponent implements OnInit, OnDestroy {
   listType: string;
   errorMessage: string;
   selectedMovieIndex: number;
+  moviesService: MoviesService;
 
-  constructor(private moviesService: MoviesService, private route: ActivatedRoute) { }
+  constructor(private injector: Injector, private route: ActivatedRoute) {
+    this.moviesService = this.injector.get(MoviesService);
+  }
 
   ngOnInit() {
     this.movieSub = this.route.data.subscribe(data => {
