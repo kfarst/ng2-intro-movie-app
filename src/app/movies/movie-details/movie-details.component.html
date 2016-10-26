@@ -1,8 +1,14 @@
 <div class="row movie--detail" [ngClass]="{ 'selected': !!markedToSee }">
   <div class="col-md-8" [ngClass]="{ 'pull-left': isEven, 'pull-right': !isEven }">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-10">
         <h1>{{ movie.title }}</h1>
+      </div>
+
+      <div class="col-md-2 movie--detail--favorite">
+        <a href (click)="$event.preventDefault();toggleAsFavorite.emit()">
+          <i class="pointer push-slightly-down fa fa-lrg pull-right" [ngClass]="isFavorited ? 'fa-star' : 'fa-star-o'"></i>
+        </a>
       </div>
     </div>
 

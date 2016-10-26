@@ -8,3 +8,12 @@
   height: 75px;
   padding: 0 16px;
 }
+
+.toolbar--aux {
+  font-size: 22px;
+}
+
+.toolbar--aux a {
+  text-decoration: none;
+  color: white;
+}

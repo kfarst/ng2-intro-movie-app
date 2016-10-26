@@ -1,5 +1,11 @@
-import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
-import { Movie, Genre } from '../index';
+import {
+  OnInit,
+  Component,
+  Input,
+  ChangeDetectionStrategy,
+  Output,
+  EventEmitter
+} from '@angular/core';
 
 @Component({
   selector: 'movie-details',
@@ -12,6 +18,9 @@ export class MovieDetailsComponent {
   @Input() genres: Genre[];
   @Input() isEven: any;
   @Input() markedToSee: boolean;
+  @Output() toggleAsFavorite = new EventEmitter<Movie>();
+
+  isFavorited: boolean = false;
 
   get movie() {
     console.log(`GET movie: ${this.movieData.title}`);

@@ -5,9 +5,11 @@
 </div>
 
 <movie-details
+  #movieDetails
   [movie]="movie"
   [isEven]="isEven"
   [markedToSee]="index === selectedMovieIndex"
   [genres]="genres"
+  (toggleAsFavorite)="toggleAsFavorite(movieDetails)"
   *ngFor="let movie of movies; let isEven = even; let index = index">
 </movie-details>
