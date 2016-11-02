@@ -8,6 +8,7 @@ import { routes } from './app.routes';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { MoviesModule } from './movies/movies.module';
+import { MailingListModule } from './mailing-list/mailing-list.module';
 
 @NgModule({
   declarations: [ AppComponent ],
@@ -17,7 +18,8 @@ import { MoviesModule } from './movies/movies.module';
     HttpModule,
     RouterModule.forRoot(routes),
     SharedModule,
-    MoviesModule
+    MoviesModule,
+    MailingListModule
   ],
   providers: [{
     provide: 'preload',

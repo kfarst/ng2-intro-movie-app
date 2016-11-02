@@ -7,6 +7,8 @@ import {
   EventEmitter
 } from '@angular/core';
 
+import { Movie, Genre } from '../index';
+
 @Component({
   selector: 'movie-details',
   templateUrl: './movie-details.component.html',

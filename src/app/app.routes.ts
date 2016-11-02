@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+
 import {
   MoviesComponent,
   MoviesActivateGuard,
@@ -6,6 +7,8 @@ import {
   MoviesResolver,
   GenresResolver
 } from './movies/index';
+
+import { MailingListComponent } from './mailing-list/index';
 
 export const routes: Routes = [
   {
@@ -21,6 +24,10 @@ export const routes: Routes = [
         genres: GenresResolver
       }
     }]
+  },
+  {
+    path: 'mailing-list',
+    component: MailingListComponent
   },
   { path: '**', redirectTo: '/movies/now-playing', pathMatch: 'full' }
 ];
