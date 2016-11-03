@@ -9,6 +9,7 @@ import {
 } from './movies/index';
 
 import { MailingListComponent } from './mailing-list/index';
+import { NewsletterComponent } from './newsletter/index';
 
 export const routes: Routes = [
   {
@@ -28,6 +29,10 @@ export const routes: Routes = [
   {
     path: 'mailing-list',
     component: MailingListComponent
+  },
+  {
+    path: 'newsletter',
+    component: NewsletterComponent
   },
   { path: '**', redirectTo: '/movies/now-playing', pathMatch: 'full' }
 ];

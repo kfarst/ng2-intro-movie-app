@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { MoviesModule } from './movies/movies.module';
 import { MailingListModule } from './mailing-list/mailing-list.module';
+import { NewsletterModule } from './newsletter/newsletter.module';
 
 @NgModule({
   declarations: [ AppComponent ],
@@ -19,7 +20,8 @@ import { MailingListModule } from './mailing-list/mailing-list.module';
     RouterModule.forRoot(routes),
     SharedModule,
     MoviesModule,
-    MailingListModule
+    MailingListModule,
+    NewsletterModule
   ],
   providers: [{
     provide: 'preload',
