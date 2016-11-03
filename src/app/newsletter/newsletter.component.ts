@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators, FormControl } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { EmailValidatorDirective } from './index';
 
 @Component({
@@ -11,15 +11,17 @@ import { EmailValidatorDirective } from './index';
 export class NewsletterComponent implements OnInit {
   registerForm: FormGroup;
 
+  constructor(private formBuilder: FormBuilder) {}
+
   ngOnInit() {
-    this.registerForm = new FormGroup({
-      firstName: new FormControl('', [Validators.required, Validators.minLength(8)]),
-      lastName: new FormControl('', Validators.required),
-      emailAddress: new FormControl('', [Validators.required, EmailValidatorDirective.validate()]),
-      address: new FormGroup({
-        street: new FormControl('', Validators.required),
-        zip: new FormControl('', Validators.required),
-        city: new FormControl('', Validators.required)
+    this.registerForm = this.formBuilder.group({
+      firstName: ['', [Validators.required, Validators.minLength(8)]],
+      lastName: ['', Validators.required],
+      emailAddress: ['', [Validators.required, EmailValidatorDirective.validate()]],
+      address: this.formBuilder.group({
+        street: ['', Validators.required],
+        zip: ['', Validators.required],
+        city: ['', Validators.required]
       })
     });
   }
