@@ -2,7 +2,7 @@
   <div class="col-md-12">
     <h1>Get our newsletter</h1>
 
-    <form [formGroup]="registerForm" novalidate>
+    <form [formGroup]="registerForm" (submit)="destroyFormValues()" novalidate>
       <div class="form-group">
         <label>First name:</label>
         <input type="text" class="form-control" formControlName="firstName">
