@@ -1,31 +1,59 @@
-# Ng2IntroMovieApp
+# codementor.io Intro to Angular 2 Movie App
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.15.
+This app is used as a live demonstration during [codementor.io](https://www.codementor.io)'s Intro to Angular 2 course. The project is built upon each week to teach the concrete concepts of Angular 2 as well as the development flow of features in Angular 2 using the [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.15.
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+<img src="http://imgur.com/bkDOhxi.png" alt="Screenshot" />
 
-## Code scaffolding
+## Getting started
+* Ensure [node.js](https://nodejs.org) is installed
+* Within the project, run `npm install`
+* The app is built with [The Movie DB API](https://www.themoviedb.org/documentation/api), therefore an API key must be obtained
+* Depending on the commit and week, search the app for `your key here` and replace it with your API key
+* Run `npm start` to start the server
+* Navigate to `http://localhost:4200/`
+* The app will automatically reload if you change any of the source files
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class`.
+## Syllabus
 
-## Build
+NOTE: Each week is separated into its own branch
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+**[Week 1](https://github.com/kfarst/ng2-intro-movie-app/tree/week1)**
 
-## Running unit tests
+*Getting started with Angular 2 ([Slides](https://docs.google.com/presentation/d/1HjCMCq3aS7lay84cS3t21VBVGtK0REvtfzHmJbzoers/edit?usp=sharing))*
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* A brief introduction to TypeScript and ES6
+* Building an app with the angular-cli
+* Structuring an app with NgModules
+* The backbone of Angular 2: components
+* The Swiss-Army module: services
+* Lab 1: Fetching and presenting upcoming movies from an API
 
-## Running end-to-end tests
+**[Week 2](https://github.com/kfarst/ng2-intro-movie-app/tree/week2)**
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/). 
-Before running the tests make sure you are serving the app via `ng serve`.
+*Building on Angular 2 ([Slides](https://docs.google.com/presentation/d/1jVxXE1Lxvus3xRl958g9K_ZtlPG5FkaZEJwaKgYHMNQ/edit?usp=sharing))*
 
-## Deploying to Github Pages
+* Connecting components and features through routing
+* Transforming data through pipes
+* Lab 2: Fetching lists of movies by type and displaying more robust data
 
-Run `ng github-pages:deploy` to deploy to Github Pages.
+**[Week 3](https://github.com/kfarst/ng2-intro-movie-app/tree/week3)**
 
-## Further help
+*Dependency injection/content projection/RxJS ([Slides](https://docs.google.com/presentation/d/1bFHyYH7og6HldsVYLY-y3_Jj5L4HpAfexASUJTudEaM/edit?usp=sharing))*
 
-To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* How Angular detects change
+* View encapsulation with components
+* Learning Angular 2’s dependency injection strategy
+* Basic content projection in Angular 2
+* Using ViewChildren and ContentChildren
+* Cold observables, hot observables, EventEmitter, and RxJS
+* Lab 3: Favoriting movies and aggregating the count
+
+**[Week 4](https://github.com/kfarst/ng2-intro-movie-app/tree/week4)**
+
+*Using Angular 2 Forms ([Slides](https://docs.google.com/presentation/d/17rQrG9bL-lkAzIpCFZ-N62ShS0v_qebUQlTq9yItUqo/edit?usp=sharing))*
+
+* Developing template-driven/model-driven forms
+* Using the built-in form validations
+* Defining custom form validations
+* Leveraging observables with forms
+* Lab 4: Adding a mailing list and newsletter forms to our app
