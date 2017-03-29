@@ -25,7 +25,7 @@ import { NewsletterModule } from './newsletter/newsletter.module';
   ],
   providers: [{
     provide: 'preload',
-    useValue: () => console.log('preloading')
+    useValue: 'preloading'
   }, {
     provide: 'apiKey',
     useValue: 'your key here'

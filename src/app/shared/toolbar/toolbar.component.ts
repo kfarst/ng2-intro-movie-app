@@ -14,7 +14,7 @@ export class ToolbarComponent implements OnInit, OnDestroy {
   constructor(private favoritesService: FavoritesService) { }
 
   ngOnInit() {
-    this.favSub = this.favoritesService.
+    this.favSub = this.favoritesService.count.
       subscribe(favoritesCount => this.favoritesCount = favoritesCount);
   }
 

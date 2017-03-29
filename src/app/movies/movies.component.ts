@@ -59,7 +59,7 @@ export class MoviesComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   updateFavoriteCount() {
-    this.favoritesService.emit(
+    this.favoritesService.updateCount(
       this.movieDetails.filter(comp => comp.isFavorited).length
     );
   }

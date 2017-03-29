@@ -20,7 +20,6 @@ export const routes: Routes = [
       canActivate: [MoviesActivateGuard],
       canDeactivate: [MoviesDeactivateGuard],
       resolve: {
-        preload: 'preload',
         movies: MoviesResolver,
         genres: GenresResolver
       }
