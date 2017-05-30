@@ -2,10 +2,18 @@
 
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { SharedModule } from './shared/shared.module';
+import { RouterTestingModule } from '@angular/router/testing';
+import { MoviesModule, MoviesComponent } from './movies/index';
 
 describe('App: Ng2IntroMovieApp', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [
+        MoviesModule,
+        SharedModule,
+        RouterTestingModule.withRoutes({ path: '/', component: MoviesComponent })
+      ],
       declarations: [
         AppComponent
       ],
@@ -15,6 +23,7 @@ describe('App: Ng2IntroMovieApp', () => {
   it('should create the app', async(() => {
     let fixture = TestBed.createComponent(AppComponent);
     let app = fixture.debugElement.componentInstance;
+    fixture.detectChanges();
     expect(app).toBeTruthy();
   }));
 
